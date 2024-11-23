@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# yabai
+{{ if eq .chezmoi.os "darwin" }}
+brew tap koekeishiya/formulae
+{{ end -}}
+
 brew bundle --no-lock --file=/dev/stdin <<EOF
 {{ range .packages.brews -}}
 brew {{ . | quote }}

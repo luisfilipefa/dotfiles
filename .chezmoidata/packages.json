@@ -13,7 +13,10 @@
             "tmux"
         ],
         "darwin": {
-            "brews": [],
+            "brews": [
+                "koekeishiya/formulae/yabai",
+                "koekeishiya/formulae/skhd"
+            ],
             "casks": [
                 "bitwarden",
                 "alfred",
