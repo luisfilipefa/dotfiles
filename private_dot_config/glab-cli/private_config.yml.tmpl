@@ -1,0 +1,14 @@
+git_protocol: ssh
+editor: nvim
+glamour_style: dark
+check_update: true
+display_hyperlinks: false
+host: git.cubos.io
+no_prompt: false
+hosts:
+    git.cubos.io:
+        token: {{ (bitwardenFields "item" "7d14e562-8343-4051-b269-b22c00dc06d1").glab_authtoken.value }}
+        api_host: git.cubos.io
+        git_protocol: ssh
+        api_protocol: https
+        user: luisfilipefa

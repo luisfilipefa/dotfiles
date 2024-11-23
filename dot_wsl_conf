@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export BROWSER=wslview
+alias adb="adb.exe"

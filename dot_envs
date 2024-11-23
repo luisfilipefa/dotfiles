@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export EDITOR="nvim"
+export BW_DEV_FOLDERID="5be0946a-0f4d-47cf-9b00-b22d0024d808"

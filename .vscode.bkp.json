@@ -1,0 +1,129 @@
+{
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
+  "editor.accessibilitySupport": "off",
+  "editor.codeLensFontFamily": "default",
+  "editor.fontFamily": "\"JetBrains Mono\", \"JetBrainsMono Nerd Font\", monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.lineHeight": 1.8,
+  "editor.rulers": [80, 120],
+  "editor.semanticHighlighting.enabled": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "git.autofetch": false,
+  "git.autoRepositoryDetection": "openEditors",
+  "git.enableSmartCommit": false,
+  "git.ignoreMissingGitWarning": true,
+  "git.mergeEditor": false,
+  "gitlens.blame.fontFamily": "default",
+  "gitlens.currentLine.fontFamily": "default",
+  "gitlens.graph.dimMergeCommits": true,
+  "gitlens.rebaseEditor.ordering": "asc",
+  "gitlens.telemetry.enabled": false,
+  "gitlens.views.commits.avatars": false,
+  "gitlens.views.showRelativeDateMarkers": false,
+  "jest.runMode": "on-demand",
+  "notebook.lineNumbers": "on",
+  "redhat.telemetry.enabled": false,
+  "symbols.hidesExplorerArrows": false,
+  "telemetry.telemetryLevel": "off",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.copyOnSelection": false,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.windows": "wsl",
+  "terminal.integrated.fontFamily": "\"JetBrains Mono\", \"JetBrainsMono Nerd Font\", monospace",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "args": [],
+      "path": "zsh"
+    }
+  },
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "args": [],
+      "path": "zsh"
+    }
+  },
+  "terminal.integrated.profiles.windows": {
+    "wsl": {
+      "args": [],
+      "path": "zsh"
+    }
+  },
+  "todo-tree.general.tags": [
+    "BUG",
+    "bug",
+    "@bug",
+    "HACK",
+    "hack",
+    "@hack",
+    "FIXME",
+    "fixme",
+    "@fixme",
+    "TODO",
+    "todo",
+    "@todo",
+    "[ ]",
+    "[x]",
+    "REFACTOR",
+    "refactor",
+    "@refactor",
+    "NOTE",
+    "note",
+    "@note",
+    "WARNING",
+    "warning",
+    "@warning"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.)|\\*)\\s*($TAGS)",
+  "todo-tree.regex.regexCaseSensitive": false,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.suggest.paths": true,
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
+  "window.commandCenter": true,
+  "window.customTitleBarVisibility": "auto",
+  "workbench.activityBar.location": "top",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.labelFormat": "short",
+  "workbench.iconTheme": "bearded-icons",
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "none",
+  "window.menuBarVisibility": "compact",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders",
+    "docker-desktop"
+  ],
+  "update.mode": "none",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "scm.showIncomingChanges": "never",
+  "scm.showOutgoingChanges": "never",
+  "scm.showHistoryGraph": false,
+  "workbench.colorTheme": "Bearded Theme Monokai Stone"
+}

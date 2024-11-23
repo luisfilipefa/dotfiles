@@ -1,0 +1,20 @@
+#!/bin/bash
+
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+
+plugins=(git ssh-agent)
+
+zstyle :omz:plugins:ssh-agent quiet yes
+zstyle :omz:plugins:ssh-agent identities zig zig-db
+
+source $ZSH/oh-my-zsh.sh
+{{ template "source_brew.tmpl" . }}
+{{ template "source_nvm.tmpl" . }}
+source ~/.aliases
+source ~/.envs
+
+{{- if eq .chezmoi.os "linux" }}
+source ~/.wsl_config
+{{ end -}}

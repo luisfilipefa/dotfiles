@@ -1,0 +1,77 @@
+#!/bin/bash
+
+if command -v "docker" > /dev/null 2>&1; then
+    echo "Docker is already installed."
+else
+    echo "Installing Docker..."
+    
+    {{ if eq .chezmoi.os "darwin" }}
+    docker_dmg_path="/tmp/Docker.dmg"
+    
+    echo "Downloading Docker for macOS..."
+    if ! curl -fsSL "https://desktop.docker.com/mac/main/arm64/Docker.dmg" -o "$docker_dmg_path"; then
+        echo "Failed to download Docker.dmg. Aborting."
+        exit 1
+    fi
+    
+    echo "Mounting the DMG..."
+    if ! sudo hdiutil attach "$docker_dmg_path"; then
+        echo "Failed to mount Docker.dmg. Aborting."
+        exit 1
+    fi
+
+    echo "Running the installer..."
+    if ! sudo /Volumes/Docker/Docker.app/Contents/MacOS/install; then
+        echo "Installation failed. Aborting."
+        exit 1
+    fi
+
+    echo "Detaching the DMG..."
+    if ! sudo hdiutil detach /Volumes/Docker; then
+        echo "Failed to detach DMG. You may need to eject it manually."
+    fi
+    
+    {{ else if eq .chezmoi.os "linux" }}
+    
+    echo "Updating package lists..."
+    if ! sudo apt-get update; then
+        echo "Failed to update package lists. Aborting."
+        exit 1
+    fi
+
+    echo "Installing prerequisites..."
+    if ! sudo apt-get install -y ca-certificates curl; then
+        echo "Failed to install prerequisites. Aborting."
+        exit 1
+    fi
+
+    echo "Adding Docker GPG key..."
+    sudo install -m 0755 -d /etc/apt/keyrings
+    if ! sudo curl -fsSL "https://download.docker.com/linux/ubuntu/gpg" -o /etc/apt/keyrings/docker.asc; then
+        echo "Failed to download Docker GPG key. Aborting."
+        exit 1
+    fi
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+    echo "Adding Docker repository..."
+    echo \
+      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+    echo "Updating package lists again..."
+    if ! sudo apt-get update; then
+        echo "Failed to update package lists. Aborting."
+        exit 1
+    fi
+
+    echo "Installing Docker..."
+    if ! sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin; then
+        echo "Failed to install Docker. Aborting."
+        exit 1
+    fi
+    
+    {{ end }}
+    
+    echo "Docker installation complete."
+fi

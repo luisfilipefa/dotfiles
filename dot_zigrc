@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# envs start
+export ZIG_SUPPORT_DATABASE_HOST="zig-support.c48kr7tfvdfu.us-east-1.rds.amazonaws.com"
+export ZIG_SUPPORT_DATABASE_USER="support"
+export ZIG_SUPPORT_DATABASE_PASSWORD="a81a14d687b11d6718b8187a0ee8758c"
+export ZIG_SUPPORT_BASTION_HOST="bastion-support.zigpay.com.br"
+export ZIG_SUPPORT_BASTION_USER="bastion"
+export ZIG_DEV_DATABASE_HOST="zig-dev-db.cik7hi30i1jv.us-east-1.rds.amazonaws.com"
+export ZIG_DEV_DATABASE_USER="zig"
+export ZIG_DEV_DATABASE_PASSWORD="scTCWjjEUHfI"
+export ZIG_DEV_BASTION_HOST="bastion.zigpay.dev"
+export ZIG_DEV_BASTION_USER="bastion"
+# envs end
+
+# aliases start
+alias log_zig_api="kubectl logs -n zig-develop -l app=$1 -f"
+alias zig_api_shell="kubectl exec -n zig-develop -c api-enterprise $(kubectl get pods -n zig-develop -l app=api-enterprise --field-selector status.phase=Running -o jsonpath='{.items[0].metadata.name}') -i -t -- /bin/bash"
+alias tunnel-zig-support="export IS_DB_PORT_FORWARDED=true && ssh $ZIG_SUPPORT_BASTION_USER@$ZIG_SUPPORT_BASTION_HOST -fNL 5432:$ZIG_SUPPORT_DATABASE_HOST:5432"
+alias tunnel-zig-dev="export IS_DB_PORT_FORWARDED=true && ssh $ZIG_DEV_BASTION_USER@$ZIG_DEV_BASTION_HOST -fNL 5432:$ZIG_DEV_DATABASE_HOST:5432"
+# aliases end
+

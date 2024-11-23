@@ -1,0 +1,19 @@
+# chezmoi: chmod=0600
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+  IdentityFile ~/.ssh/gh-luisfilipefa
+Host git.cubos.io
+  Hostname git.cubos.io
+  Port 22000
+  IdentityFile ~/.ssh/zig
+Host bastion-support.zigpay.com.br
+  Hostname bastion-support.zigpay.com.br
+  User bastion
+  Port 22000
+  IdentityFile ~/.ssh/zig-db
+Host bastion.zigpay.dev
+  Hostname bastion.zigpay.dev
+  User bastion
+  Port 22000
+  IdentityFile ~/.ssh/zig-db

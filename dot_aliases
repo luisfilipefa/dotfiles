@@ -1,0 +1,6 @@
+#!/bin/bash
+
+alias prettyjson="python -m json.tool"
+alias cz="chezmoi"
+alias python="python3"
+alias unpushed="git log --branches --not --remotes --no-walk --decorate --oneline"

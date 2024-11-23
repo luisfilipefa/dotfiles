@@ -1,0 +1,45 @@
+{
+    "packages": {
+        "brews": [
+            "chezmoi",
+            "bitwarden-cli",
+            "fzf",
+            "gh",
+            "glab",
+            "lazygit",
+            "neovim",
+            "nvm",
+            "ripgrep",
+            "tmux"
+        ],
+        "darwin": {
+            "brews": [],
+            "casks": [
+                "bitwarden",
+                "alfred",
+                "arc",
+                "datagrip",
+                "google-chrome",
+                "google-drive",
+                "iterm2",
+                "libreoffice",
+                "ngrok",
+                "obsidian",
+                "postman",
+                "rectangle",
+                "slack",
+                "spotify",
+                "todoist",
+                "visual-studio-code",
+                "vlc",
+                "font-jetbrains-mono-nerd-font"
+            ]
+        }, 
+        "linux": {
+            "brews": [],
+            "casks": [
+                "font-jetbrains-mono-nerd-font"
+            ]
+        }
+    }
+}
